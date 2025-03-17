@@ -4,7 +4,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import authAPI from "../../apis/authApi";
 import moment from "moment";
-import DeleteConfirm from "../../modals/deleteConfrim.jsx";
+import DeleteConfirm from "../../modals/DeleteConfrim";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import AddTask from "../../modals/AddTask";
