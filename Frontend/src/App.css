@@ -1,0 +1,132 @@
+/* Add this to your App.css or a dedicated CSS file */
+/* index.css or App.css */
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+.sidebar {
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-open {
+  width: 15rem; /* Adjust as needed */
+
+}
+
+.sidebar-closed {
+  width: 4rem; /* Adjust as needed */
+}
+
+.custom-dashed-border {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #022213;
+  border-image: linear-gradient(to right, #022213 30%, transparent 30%, transparent 70%, #022213 70%) 1;
+  border-image-slice: 1;
+}
+
+
+/* For small devices */
+@media (max-width: 767px) {
+  .sidebar-closed {
+    opacity: 0; /* No opacity on small devices */
+  }
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-text {
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure text is hidden on small devices */
+@media (max-width: 767px) {
+  .sidebar-text {
+    display: none;
+  }
+}
+/* In your global CSS file or component's CSS */
+::placeholder {
+  font-size: 13px; /* Adjust the font size as needed */
+}
+@media (max-width: 640px) {
+  ::placeholder {
+    font-size: 12px; /* Smaller size for mobile */
+  }
+}/* Custom checkbox styles */
+.custom-checkbox {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #022213; /* Green border */
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Checked state */
+.custom-checkbox:checked {
+  background-color: #022213; /* Green background when checked */
+  border-color: #022213;
+}
+
+/* Custom checkmark inside checkbox */
+.custom-checkbox:checked::before {
+  content: '✓';
+  font-size: 1rem;
+  color: white;
+  display: block;
+}
+
+/* Hover state for checkbox */
+.custom-checkbox:hover {
+  border-color: #022213;
+}
+.svg-selected path {
+  fill: #FFFFFF; /* White color for selected state */
+}
+
+.svg-unselected path {
+  fill: #000000; /* Black color for unselected state */
+}
+
+.custom-datepicker-popper {
+  transform: translateX(0px) translateY(40px) !important; /* Adjust values as needed */
+}
+
+/* Hide spinner controls in Chrome, Safari, Edge, and Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinner controls in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* Hide scrollbar for modern browsers */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+.placeholder-font-customBold::placeholder {
+  font-weight: 700; /* or any value you prefer */
+}
