@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { doLogout } from "../redux/features/authSlice";
 import img from "../assets/44-448187_download-user-icon-png-clipart-computer-icons-user-removebg-preview.png";
-import logoutImg from "../assets/logout.png";
+import logoutImg from "../assets/Logout.png";
 
 const Header = () => {
   const navigate = useNavigate();
