@@ -5,7 +5,7 @@ import moment from 'moment';
 import { FiEdit, FiTrash2 } from 'react-icons/fi';
 import AddEvents from '../../modals/AddEvents';
 import EditEvents from '../../modals/EditEvent';
-import DeleteConfirm from '../../modals/deleteConfrim';
+import DeleteConfirm from '../../modals/deleteConfrim.jsx';
 
 
 
