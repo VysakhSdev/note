@@ -4,7 +4,7 @@ import MainLayout from '../layout/MainLayout';
 import AuthLayout from '../layout/AuthLayout';
 import { ProtectedRoute, PublicRoute } from './Routes';
 import Loader from '../layout/Loader2';
-import Signup from '../pages/authentication/signup.js';
+import Signup from '../pages/authentication/signup.jsx';
 
 const Tasks = lazy(() => import('../components/adminPannel/Tasks'));
 const Events = lazy(() => import('../components/adminPannel/Events'));
