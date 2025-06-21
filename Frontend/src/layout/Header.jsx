@@ -55,41 +55,28 @@ const Header = () => {
               <IoIosClose />
             </div>
 
-            {logout ? (
-              <div className="flex flex-col items-center">
-                <img src={logoutImg} alt="Logout" className="w-22 h-22 rounded-full mb-4" />
-                <p className="text-lg font-semibold text-black text-center">Are You Sure You Want to Logout?</p>
-                <div className="flex justify-center gap-x-4 mt-6 text-base">
-                  <button
-                    onClick={() => setLogout(false)}
-                    className="bg-white font-medium border px-6 text-sm text-gray-900 py-2 rounded-lg hover:bg-[#72B800]"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    onClick={adminLogout}
-                    className="bg-[#022213] text-white px-6 py-2 text-sm rounded-lg hover:bg-[#72B800]"
-                  >
-                    Logout
-                  </button>
-                </div>
+
+            <div className="flex flex-col items-center">
+              <img src={logoutImg} alt="Logout" className="w-22 h-22 rounded-full mb-4" />
+              <p className="text-lg font-semibold text-black text-center">Are You Sure You Want to Logout?</p>
+              <div className="flex justify-center gap-x-4 mt-6 text-base">
+                <button
+                  onClick={() => setLogout(false)}
+                  className="bg-white font-medium border px-6 text-sm text-gray-900 py-2 rounded-lg hover:bg-[#72B800]"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={adminLogout}
+                  className="bg-[#022213] text-white px-6 py-2 text-sm rounded-lg hover:bg-[#72B800]"
+                >
+                  Logout
+                </button>
               </div>
-            ) : (
-              <div className="flex flex-col items-center">
-                <img src={img} alt="Profile" className="w-24 h-24 rounded-full mb-2" />
-                <h2 className="text-lg font-bold">Super Admin</h2>
-                <p className="text-black text-[14px] font-bold pt-1">CEO of HRM</p>
-                <p className="text-gray-400 text-[14px] pt-1">superadmin@gmail.com</p>
-                <div className="flex justify-end mt-6 text-sm">
-                  <button
-                    onClick={handleLogoutButton}
-                    className="bg-[#022213] text-white px-4 py-2 rounded-lg hover:bg-[#72B800]"
-                  >
-                    Log out
-                  </button>
-                </div>
-              </div>
-            )}
+            </div>
+
+
+
           </div>
         )}
       </div>

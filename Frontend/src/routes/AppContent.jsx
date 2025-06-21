@@ -7,7 +7,6 @@ import Loader from '../layout/Loader2';
 import Signup from '../pages/authentication/signup.jsx';
 
 const Tasks = lazy(() => import('../components/adminPannel/Tasks'));
-const Events = lazy(() => import('../components/adminPannel/Events'));
 const Login = lazy(() => import('../pages/authentication/login'));
 
 const AppContent = () => {
@@ -17,7 +16,6 @@ const AppContent = () => {
         <Route path="/overview" element={<ProtectedRoute component={MainLayout} />}>
           <Route index element={<Navigate to="/overview/tasks" replace />} />
           <Route path="tasks" element={<Tasks />} />
-          <Route path="events" element={<Events />} />
         </Route>
 
         <Route path="/" element={<PublicRoute component={AuthLayout} />}>

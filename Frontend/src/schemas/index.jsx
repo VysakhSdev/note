@@ -6,10 +6,7 @@ export const signUpSchema = Yup.object({
     .max(25, "Name cannot exceed 25 characters")
     .required("Please enter your name"),
   
-  phone: Yup.string()
-    .matches(/^[0-9]{10}$/, "Phone number must be 10 digits")
-    .required("Please enter your phone number"),
-    
+ 
   email: Yup.string()
     .email("Invalid email format")
     .required("Please enter your email"),
@@ -32,7 +29,6 @@ export const signUpSchema = Yup.object({
 
 export const signUpInitialValues = {
   name: "",
-  phone: "",
   email: "",
   password: "",
   confirmPassword: ""

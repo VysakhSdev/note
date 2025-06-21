@@ -5,18 +5,15 @@ import jwt from "jsonwebtoken";
 
 //-------------------SIGN UP------------//
 export const userSignUp = asyncHandler(async (req, res) => {
-  const { name, email, password, phone } = req.body;
-  console.log(req.body, "req.body");
+  const { name, email, password } = req.body;
 
-  // Validate required fields
-  if (!name || !email || !phone || !password) {
+  if (!name || !email  || !password) {
     return res.status(400).json({
       status: "failed",
       message: "All fields are required",
     });
   }
 
-  // Check if user already exists
   const existingUser = await UserModel.findOne({ email });
   if (existingUser) {
     return res.status(403).json({
@@ -25,8 +22,7 @@ export const userSignUp = asyncHandler(async (req, res) => {
     });
   }
 
-  // Create new user
-  const newUser = await UserModel.create({ name, email, password, phone });
+  const newUser = await UserModel.create({ name, email, password });
 
   return res.status(201).json({
     status: "success",
@@ -39,7 +35,6 @@ export const userSignUp = asyncHandler(async (req, res) => {
 export const userLogin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  // Validate required fields
   if (!email || !password) {
     return res.status(400).json({
       status: "failed",
@@ -47,7 +42,6 @@ export const userLogin = asyncHandler(async (req, res) => {
     });
   }
 
-  // Find user by email
   const user = await UserModel.findOne({ email });
   if (!user) {
     return res.status(404).json({
@@ -56,7 +50,6 @@ export const userLogin = asyncHandler(async (req, res) => {
     });
   }
 
-  // Check password
   const isPasswordValid = await bcrypt.compare(password, user.password);
   if (!isPasswordValid) {
     return res.status(401).json({
@@ -65,7 +58,6 @@ export const userLogin = asyncHandler(async (req, res) => {
     });
   }
 
-  // Generate JWT token
   const accessToken = jwt.sign(
     {
       id: user.id,

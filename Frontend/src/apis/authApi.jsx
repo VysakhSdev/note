@@ -8,62 +8,28 @@ const authAPI = () => {
     const res = await axiosConfig.post("user/signup", data);
     return res;
   };
-  const doGetTasks = async (data) => {
-    const res = await axiosConfig.get(`/task/get-task`, data);
+  const doGetNotes = async (data) => {
+    const res = await axiosConfig.get(`/notes/getNotes`, data);
     return res;
   };
-  const doGetPrivateTasks = async (id) => {
 
-    const res = await axiosConfig.get(`/task/get-task?userId=${id}`);
-    return res;
-
-  };
-  const doUpdateTask = async (id, taskData) => {
-    const res = await axiosConfig.patch(`/task/edit-task?id=${id}`, taskData);
+  const doCreateNotes = async (data) => {
+    const res = await axiosConfig.post("/notes/createNote", data);
     return res;
   };
-  
-
-
-
-
-
-  const doCreateTasks = async (data) => {
-    const res = await axiosConfig.post("/task/create-task", data);
-
+   const doShareNote = async (data) => {
+    const res = await axiosConfig.post("/notes/shareNotes", data);
     return res;
   };
-  const doDeleteTasks = async (id) => {
-    const res = await axiosConfig.delete(`/task/delete-task/${id}`);
-    return res;
-  };
- 
-
-  const doDeleteEvents = async (id) => {
-    const res = await axiosConfig.delete(`/event/delete-event/${id}`);
-    return res;
-  };
+const doUpdateNote = async (id, data) => {
+  const res = await axiosConfig.put(`/notes/editNote/${id}`, data);  
+  return res;
+};
 
   
-  const doCreateEvents = async (data) => {
-    const res = await axiosConfig.post("/event/create-event", data);
-
-    return res;
-  };
-  const doGetEvents = async () => {
-    const res = await axiosConfig.get("/event/get-event");
-
-    return res;
-  };
-  const doUpdateEvent = async (id, eventData) => {
-    const res = await axiosConfig.patch(`/event/update-event?id=${id}`, eventData);
-    return res;
-  };
-
-
  
 
-  return { doLogin, doSignUp,doDeleteEvents, doGetTasks,doUpdateEvent, doGetPrivateTasks ,doCreateTasks,doDeleteTasks,doUpdateTask,doGetEvents,doCreateEvents};
+  return { doLogin, doSignUp, doCreateNotes,doGetNotes,doShareNote,doUpdateNote};
 };
 
 

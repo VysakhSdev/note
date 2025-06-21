@@ -2,16 +2,12 @@ import React, { useEffect, memo, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { MdSpaceDashboard } from "react-icons/md";
 import { RiShieldUserFill } from "react-icons/ri";
 import { motion } from "framer-motion";
-// import logo from "../assets/Layer_1 (1).png";
 import line from "../assets/line.png";
 
 const Menus = [
-  // { title: "Dashboard", path: "/overview", icon: <MdSpaceDashboard /> },
-  { title: "My Tasks", path: "/overview/tasks", icon: <RiShieldUserFill /> },
-  { title: "My Events", path: "/overview/events", icon: <RiShieldUserFill /> },
+  { title: "Notes", path: "/overview/notes", icon: <RiShieldUserFill /> },
 
 ];
 
@@ -52,7 +48,7 @@ const AdminAside = memo(({ open, setOpen }) => {
         {/* <img src={logo} className={`w-[39px] h-[39px] ${!open ? "ml-4" : "ml-0"}`} alt="Company logo" /> */}
         {open && (
           <span className="transition-all duration-500 ease-in-out pl-1 font-customBold">
-            EVENT <span className="bg-gradient-to-br from-[#4aff5c] to-[#5d4fb2] bg-clip-text text-transparent">Manager</span>
+            KEEP <span className="bg-gradient-to-br from-[#4aff5c] to-[#5d4fb2] bg-clip-text text-transparent">NOTES</span>
           </span>
         )}
       </div>
