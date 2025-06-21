@@ -2,7 +2,7 @@
 import axios from "axios";
 
 
-const baseURL ='http://localhost:5000'|| "/api";
+const baseURL ='https://note-cx0v.onrender.com'|| "/api";
 
 
 const axiosConfig = axios.create({

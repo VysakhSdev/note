@@ -185,12 +185,7 @@ useEffect(() => {
                       <FiShare2 size={18} />
                     </button>
 
-                    <button
-                      onClick={() => toast("Delete modal not implemented")}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      <FiTrash2 size={18} />
-                    </button>
+                   
                   </>
                 )}
                 {noteType === "shared" && (
